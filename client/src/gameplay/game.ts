@@ -8,14 +8,14 @@ if (board) {
     playCount++;
 
     const thisSquare = document.getElementById(squareId);
-    // if play count is even -> square turns pink
+    // if play count is even -> square turns pink & add O
     if (playCount % 2 === 0) {
       thisSquare?.classList.add("evenCount");
       thisSquare?.classList.remove("square");
       return;
     }
 
-    // if play count is odd => square turns green
+    // if play count is odd => square turns green & add X
     thisSquare?.classList.add("oddCount");
     thisSquare?.classList.remove("square");
   };

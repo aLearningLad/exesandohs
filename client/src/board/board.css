@@ -35,3 +35,31 @@ body {
   cursor: pointer;
   user-select: none;
 }
+
+.evenCount {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.oddCount {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: greenyellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}

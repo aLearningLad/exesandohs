@@ -7,13 +7,13 @@ if (board) {
     const changeColourOnClick = (squareId) => {
         playCount++;
         const thisSquare = document.getElementById(squareId);
-        // if play count is even -> square turns pink
+        // if play count is even -> square turns pink & add O
         if (playCount % 2 === 0) {
             thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.add("evenCount");
             thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.remove("square");
             return;
         }
-        // if play count is odd => square turns green
+        // if play count is odd => square turns green & add X
         thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.add("oddCount");
         thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.remove("square");
     };
