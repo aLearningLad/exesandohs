@@ -1,6 +1,6 @@
 const board: HTMLDivElement | null = document.querySelector(".board");
 const squareCount = 9;
-let playCount = 1;
+let playCount = 2;
 let player1Claimed: string[] = [];
 let player2Claimed: string[] = [];
 
@@ -18,10 +18,10 @@ if (board) {
     }
 
     // if play count is even -> square turns pink & add O
-    if (playCount % 2 === 0 && playCount > 1) {
-      // this is player 2
+    if (playCount % 2 === 0) {
+      // this is player 1
       player2Claimed.push(squareId);
-      alert("player2 claims: " + player2Claimed.join(""));
+      alert("player1 claims: " + player1Claimed.join(""));
 
       // handle colour
       thisSquare?.classList.add("evenCount");
@@ -34,7 +34,7 @@ if (board) {
       return;
     } else {
       player1Claimed.push(squareId);
-      alert("Player1 plays: " + player1Claimed.join(""));
+      alert("Player2 plays: " + player2Claimed.join(""));
 
       // if play count is odd => square turns green & add X
       thisSquare?.classList.add("oddCount");
