@@ -6,6 +6,10 @@ const checkForWin = (patterns, userClaims, currentTurn) => {
         if (patterns[i].includes(userClaims.join("")) ||
             patterns[i].includes(userClaims.reverse().join(""))) {
             alert("Player " + currentTurn + " wins!");
+            return;
+        }
+        else {
+            alert("Player " + currentTurn + " has claimed " + userClaims);
         }
     }
 };

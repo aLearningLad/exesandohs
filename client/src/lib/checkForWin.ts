@@ -9,6 +9,9 @@ export const checkForWin = (
       patterns[i].includes(userClaims.reverse().join(""))
     ) {
       alert("Player " + currentTurn + " wins!");
+      return;
+    } else {
+      alert("Player " + currentTurn + " has claimed " + userClaims);
     }
   }
 };

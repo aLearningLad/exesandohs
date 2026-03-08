@@ -21,7 +21,6 @@ if (board) {
     if (playCount % 2 === 0) {
       // this is player 2
       player2Claimed.push(squareId);
-      alert("player2 claims: " + player2Claimed.join(""));
 
       // handle colour
       thisSquare?.classList.add("evenCount");
@@ -52,17 +51,6 @@ if (board) {
     // possible winning combos
     // 1,2,3 OR 456 OR 789
     // 1,5,9 OR 3,5,7
-
-    // check winning play
-    if (
-      player1Claimed.join("").includes("123") ||
-      player1Claimed.join("").includes("456") ||
-      player1Claimed.join("").includes("789") ||
-      player1Claimed.join("").includes("159") ||
-      player1Claimed.join("").includes("357")
-    ) {
-      alert("Game over! Player 1 wins!");
-    }
   };
 
   // create 9 squares
