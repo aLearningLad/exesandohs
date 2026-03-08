@@ -41,11 +41,12 @@ body {
   height: 100%;
   border-radius: 10px;
   background-color: pink;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 3rem;
+  font-weight: lighter;
   cursor: pointer;
   user-select: none;
 }
@@ -55,10 +56,11 @@ body {
   height: 100%;
   border-radius: 10px;
   background-color: greenyellow;
+  color: brown;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: bold;
   cursor: pointer;
   user-select: none;

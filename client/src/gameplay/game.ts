@@ -8,16 +8,33 @@ if (board) {
     playCount++;
 
     const thisSquare = document.getElementById(squareId);
+
+    // if player has chosen this square before, abort
+    if (thisSquare?.hasChildNodes()) {
+      alert("This square has already been claimed");
+    }
+
     // if play count is even -> square turns pink & add O
     if (playCount % 2 === 0) {
+      // handle colour
       thisSquare?.classList.add("evenCount");
       thisSquare?.classList.remove("square");
+
+      // add 0
+      const Oh = document.createElement("p");
+      Oh.innerHTML = "X";
+      thisSquare?.appendChild(Oh);
       return;
     }
 
     // if play count is odd => square turns green & add X
     thisSquare?.classList.add("oddCount");
     thisSquare?.classList.remove("square");
+
+    // add X
+    const Ex = document.createElement("p");
+    Ex.innerHTML = "O";
+    thisSquare?.appendChild(Ex);
   };
 
   // create 9 squares
