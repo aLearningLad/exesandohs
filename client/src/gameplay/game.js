@@ -15,9 +15,10 @@ if (board) {
             return;
         }
         // if play count is even -> square turns pink & add O
-        if (playCount % 2 === 0) {
-            // this is player 2
+        if (playCount % 2 === 0 && playCount !== 1) {
+            // this is player 1
             player2Claimed.push(squareId);
+            alert("player1 claims: " + player1Claimed.join(""));
             // handle colour
             thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.add("evenCount");
             thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.remove("square");
@@ -29,6 +30,7 @@ if (board) {
         }
         else {
             player1Claimed.push(squareId);
+            alert("Player2 plays: " + player2Claimed.join(""));
             // if play count is odd => square turns green & add X
             thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.add("oddCount");
             thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.remove("square");
@@ -41,7 +43,14 @@ if (board) {
         // possible winning combos
         // 1,2,3 OR 456 OR 789
         // 1,5,9 OR 3,5,7
-        //
+        // check winning play
+        if (player1Claimed.join("").includes("123") ||
+            player1Claimed.join("").includes("456") ||
+            player1Claimed.join("").includes("789") ||
+            player1Claimed.join("").includes("159") ||
+            player1Claimed.join("").includes("357")) {
+            alert("Game over! Player 1 wins!");
+        }
     };
     // create 9 squares
     for (let i = 0; i < squareCount; i++) {
