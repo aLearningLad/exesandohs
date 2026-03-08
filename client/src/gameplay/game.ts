@@ -17,7 +17,7 @@ if (board) {
     square.setAttribute("id", String(i));
 
     // add an event listener to each square so we can click & shii
-
+    square.addEventListener("click", () => changeColourOnClick(String(i)));
     // add classname so we can style it
     square.classList.add("square");
     board.appendChild(square);
