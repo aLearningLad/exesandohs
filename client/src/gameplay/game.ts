@@ -47,10 +47,6 @@ if (board) {
     playCount++;
 
     // check player has won
-
-    // possible winning combos
-    // 1,2,3 OR 456 OR 789
-    // 1,5,9 OR 3,5,7
   };
 
   // create 9 squares

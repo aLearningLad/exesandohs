@@ -1,4 +1,8 @@
 "use strict";
+// ***************** ACTION PLAN *************
+// instead of array, use a map and just have this function check if map has values in string
+// save each 3 number string as a key
+// map is faster to search through than an array
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.checkForWin = void 0;
 const checkForWin = (patterns, userClaims, currentTurn) => {
