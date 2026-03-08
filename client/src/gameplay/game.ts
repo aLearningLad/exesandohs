@@ -18,7 +18,7 @@ if (board) {
     }
 
     // if play count is even -> square turns pink & add O
-    if (playCount % 2 === 0) {
+    if (playCount % 2 === 0 && playCount > 1) {
       // this is player 2
       player2Claimed.push(squareId);
       alert("player2 claims: " + player2Claimed.join(""));
@@ -54,11 +54,11 @@ if (board) {
 
     // check winning play
     if (
-      player1Claimed.join("") === "123" ||
-      player1Claimed.join("") === "456" ||
-      player1Claimed.join("") === "789" ||
-      player1Claimed.join("") === "159" ||
-      player1Claimed.join("") === "357"
+      player1Claimed.join("").includes("123") ||
+      player1Claimed.join("").includes("456") ||
+      player1Claimed.join("").includes("789") ||
+      player1Claimed.join("").includes("159") ||
+      player1Claimed.join("").includes("357")
     ) {
       alert("Game over! Player 1 wins!");
     }
