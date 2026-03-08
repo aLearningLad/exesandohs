@@ -1,7 +1,7 @@
 "use strict";
 const board = document.querySelector(".board");
 const squareCount = 9;
-let playCount = 2;
+let playCount = 1;
 let player1Claimed = [];
 let player2Claimed = [];
 // show number one inside board, in white
@@ -15,7 +15,7 @@ if (board) {
             return;
         }
         // if play count is even -> square turns pink & add O
-        if (playCount % 2 === 0) {
+        if (playCount % 2 === 0 && playCount !== 1) {
             // this is player 1
             player2Claimed.push(squareId);
             alert("player1 claims: " + player1Claimed.join(""));
