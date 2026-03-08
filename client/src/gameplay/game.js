@@ -7,18 +7,17 @@ let player2Claimed = [];
 // show number one inside board, in white
 if (board) {
     const changeColourOnClick = (squareId) => {
-        playCount++;
         const thisSquare = document.getElementById(squareId);
         // if player has chosen this square before, abort
         if (thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.hasChildNodes()) {
-            alert("This square has already been claimed");
+            alert("This square has already been claimed. Try selecting an empty square to continue playing");
             return;
         }
         // if play count is even -> square turns pink & add O
-        if (playCount % 2 === 0 && playCount !== 1) {
-            // this is player 1
+        if (playCount % 2 === 0) {
+            // this is player 2
             player2Claimed.push(squareId);
-            alert("player1 claims: " + player1Claimed.join(""));
+            alert("player2 claims: " + player2Claimed.join(""));
             // handle colour
             thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.add("evenCount");
             thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.remove("square");
@@ -26,11 +25,10 @@ if (board) {
             const Oh = document.createElement("p");
             Oh.innerHTML = "X";
             thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.appendChild(Oh);
-            return;
         }
         else {
             player1Claimed.push(squareId);
-            alert("Player2 plays: " + player2Claimed.join(""));
+            alert("Player1 plays: " + player1Claimed.join(""));
             // if play count is odd => square turns green & add X
             thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.add("oddCount");
             thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.remove("square");
@@ -39,6 +37,7 @@ if (board) {
             Ex.innerHTML = "O";
             thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.appendChild(Ex);
         }
+        playCount++;
         // check player has won
         // possible winning combos
         // 1,2,3 OR 456 OR 789

@@ -7,21 +7,21 @@ let player2Claimed: string[] = [];
 // show number one inside board, in white
 if (board) {
   const changeColourOnClick = (squareId: string): void => {
-    playCount++;
-
     const thisSquare = document.getElementById(squareId);
 
     // if player has chosen this square before, abort
     if (thisSquare?.hasChildNodes()) {
-      alert("This square has already been claimed");
+      alert(
+        "This square has already been claimed. Try selecting an empty square to continue playing",
+      );
       return;
     }
 
     // if play count is even -> square turns pink & add O
-    if (playCount % 2 === 0 && playCount !== 1) {
-      // this is player 1
+    if (playCount % 2 === 0) {
+      // this is player 2
       player2Claimed.push(squareId);
-      alert("player1 claims: " + player1Claimed.join(""));
+      alert("player2 claims: " + player2Claimed.join(""));
 
       // handle colour
       thisSquare?.classList.add("evenCount");
@@ -31,10 +31,9 @@ if (board) {
       const Oh = document.createElement("p");
       Oh.innerHTML = "X";
       thisSquare?.appendChild(Oh);
-      return;
     } else {
       player1Claimed.push(squareId);
-      alert("Player2 plays: " + player2Claimed.join(""));
+      alert("Player1 plays: " + player1Claimed.join(""));
 
       // if play count is odd => square turns green & add X
       thisSquare?.classList.add("oddCount");
@@ -45,6 +44,8 @@ if (board) {
       Ex.innerHTML = "O";
       thisSquare?.appendChild(Ex);
     }
+
+    playCount++;
 
     // check player has won
 
