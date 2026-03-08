@@ -1,10 +1,21 @@
 "use strict";
 const board = document.querySelector(".board");
 const squareCount = 9;
+let playCount = 1;
 // show number one inside board, in white
 if (board) {
     const changeColourOnClick = (squareId) => {
-        alert("Clicked square with ID: " + squareId);
+        playCount++;
+        const thisSquare = document.getElementById(squareId);
+        // if play count is even -> square turns pink
+        if (playCount % 2 === 0) {
+            thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.add("evenCount");
+            thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.remove("square");
+            return;
+        }
+        // if play count is odd => square turns green
+        thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.add("oddCount");
+        thisSquare === null || thisSquare === void 0 ? void 0 : thisSquare.classList.remove("square");
     };
     // create 9 squares
     for (let i = 0; i < squareCount; i++) {
@@ -12,9 +23,9 @@ if (board) {
         // create a single block
         const square = document.createElement("div");
         // give the square an id for when user clicks it
-        square.setAttribute("id", String(i));
+        square.setAttribute("id", String(i + 1));
         // add an event listener to each square so we can click & shii
-        square.addEventListener("click", () => changeColourOnClick(String(i)));
+        square.addEventListener("click", () => changeColourOnClick(String(i + 1)));
         // add classname so we can style it
         square.classList.add("square");
         board.appendChild(square);
