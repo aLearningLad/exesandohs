@@ -1,10 +1,12 @@
+import { checkForWin } from "../lib/checkForWin";
+import { winningPatternsArr } from "../lib/winningPatterns";
+
 const board: HTMLDivElement | null = document.querySelector(".board");
 const squareCount = 9;
 let playCount = 1;
 let player1Claimed: string[] = [];
 let player2Claimed: string[] = [];
 
-// show number one inside board, in white
 if (board) {
   const changeColourOnClick = (squareId: string): void => {
     const thisSquare = document.getElementById(squareId);
