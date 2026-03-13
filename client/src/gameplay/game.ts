@@ -1,10 +1,12 @@
+import { checkForWin } from "../lib/checkForWin";
+import { winningPatternsArr } from "../lib/winningPatterns";
+
 const board: HTMLDivElement | null = document.querySelector(".board");
 const squareCount = 9;
 let playCount = 1;
 let player1Claimed: string[] = [];
 let player2Claimed: string[] = [];
 
-// show number one inside board, in white
 if (board) {
   const changeColourOnClick = (squareId: string): void => {
     const thisSquare = document.getElementById(squareId);
@@ -47,10 +49,6 @@ if (board) {
     playCount++;
 
     // check player has won
-
-    // possible winning combos
-    // 1,2,3 OR 456 OR 789
-    // 1,5,9 OR 3,5,7
   };
 
   // create 9 squares
