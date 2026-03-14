@@ -2,6 +2,7 @@ import { checkForWin } from "../lib/checkForWin";
 import { winningPatternsArr } from "../lib/winningPatterns";
 
 const board: HTMLDivElement | null = document.querySelector(".board");
+const callFlaskBtn = document.getElementById("callFlask");
 const squareCount = 9;
 let playCount = 1;
 let player1Claimed: string[] = [];
@@ -68,12 +69,18 @@ if (board) {
   }
 }
 
-const handleFlaskCall = async (): Promise<string> => {
-  const res = await fetch("http://127.0.0.1:5000");
-  if (!res) {
-    console.log("Nothing found!");
+const handleFlaskCall = async (): Promise<void> => {
+  try {
+    const res = await fetch("http://172.30.175.83:5000/score");
+    if (!res.ok) {
+      alert("Flask error: " + res.status);
+      return;
+    }
+    const text = await res.text();
+    alert("Flask says: " + text);
+  } catch (err) {
+    alert("Failed to reach Flask: " + err);
   }
-  return "Nothing found";
-  console.log("Yup, flask found!");
-  return "Yup, flash found!";
 };
+
+callFlaskBtn?.addEventListener("click", handleFlaskCall);
