@@ -2,6 +2,7 @@ import { checkForWin } from "../lib/checkForWin";
 import { winningPatternsArr } from "../lib/winningPatterns";
 
 const board: HTMLDivElement | null = document.querySelector(".board");
+const callFlaskBtn = document.getElementById("callFlask");
 const squareCount = 9;
 let playCount = 1;
 let player1Claimed: string[] = [];
@@ -67,3 +68,19 @@ if (board) {
     board.appendChild(square);
   }
 }
+
+const handleFlaskCall = async (): Promise<void> => {
+  try {
+    const res = await fetch("http://172.30.175.83:5000/score");
+    if (!res.ok) {
+      alert("Flask error: " + res.status);
+      return;
+    }
+    const text = await res.text();
+    alert("Flask says: " + text);
+  } catch (err) {
+    alert("Failed to reach Flask: " + err);
+  }
+};
+
+callFlaskBtn?.addEventListener("click", handleFlaskCall);

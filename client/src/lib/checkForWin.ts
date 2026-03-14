@@ -3,7 +3,7 @@
 // save each 3 number string as a key
 // map is faster to search through than an array
 
-const winningCombosMap = new Map<string, string>();
+const winningCombosMap = new Map<string, string>([]);
 
 export const checkForWin = (
   patterns: string[][],
