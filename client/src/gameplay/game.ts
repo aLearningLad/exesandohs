@@ -67,3 +67,5 @@ if (board) {
     board.appendChild(square);
   }
 }
+
+const handleFlaskCall = async () => {};

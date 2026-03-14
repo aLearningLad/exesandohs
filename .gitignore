@@ -1,4 +1,6 @@
 # client node_modules
 client/node_modules
 
-# server node modules
+# server venv
+venv/
+server/venv
