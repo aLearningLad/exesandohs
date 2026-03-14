@@ -68,4 +68,12 @@ if (board) {
   }
 }
 
-const handleFlaskCall = async () => {};
+const handleFlaskCall = async (): Promise<string> => {
+  const res = await fetch("http://127.0.0.1:5000");
+  if (!res) {
+    console.log("Nothing found!");
+  }
+  return "Nothing found";
+  console.log("Yup, flask found!");
+  return "Yup, flash found!";
+};
