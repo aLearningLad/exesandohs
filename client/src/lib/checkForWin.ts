@@ -4,6 +4,10 @@
 // map is faster to search through than an array
 
 const winningCombosMap = new Map<string, string>([]);
+type WinnerAlert = {
+  playerName: string;
+  gameStatus: "Win" | "Continue";
+};
 
 // export const checkForWin = (
 //   patterns: string[][],
@@ -23,4 +27,9 @@ const winningCombosMap = new Map<string, string>([]);
 //   }
 // };
 
-export const checkForWin = () => {};
+export const checkForWin = (
+  player1Claims: string[],
+  player2Claims: string[],
+): WinnerAlert => {
+  return { gameStatus: "Continue", playerName: "player1" };
+};
