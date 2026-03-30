@@ -27,9 +27,13 @@ type WinnerAlert = {
 //   }
 // };
 
+
 export const checkForWin = (
   player1Claims: string[],
   player2Claims: string[],
 ): WinnerAlert => {
+
+  if 
+
   return { gameStatus: "Continue", playerName: "player1" };
 };
